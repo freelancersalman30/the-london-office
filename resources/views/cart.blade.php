@@ -105,7 +105,48 @@
     }
     
     function checkout() {
-        alert('Proceeding to Stripe checkout...');
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        if (cart.length === 0) {
+            alert('Your cart is empty');
+            return;
+        }
+        
+        const isLoggedIn = {{ Auth::check() ? 'true' : 'false' }};
+        
+        if (!isLoggedIn) {
+            window.location.href = '{{ route("login") }}?redirect=/cart';
+            return;
+        }
+        
+        console.log('Sending cart:', cart);
+        
+        fetch('{{ route("checkout") }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            body: JSON.stringify({ cart: cart })
+        })
+        .then(response => {
+            console.log('Response status:', response.status);
+            return response.json();
+        })
+        .then(data => {
+            console.log('Response data:', data);
+            if (data.success) {
+                localStorage.removeItem('cart');
+                updateCartDisplay();
+                window.location.href = '/order/success/' + data.order_id;
+            } else {
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Something went wrong: ' + error.message);
+        });
     }
     
     function updateCartDisplay() {

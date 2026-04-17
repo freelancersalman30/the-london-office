@@ -39,7 +39,7 @@
                     <p class="text-gray-500 text-sm mb-2">£29.16 per month</p>
                     <p class="text-gray-500 text-sm mb-6">+ £20 Postal Deposit + VAT</p>
                     
-                    <button class="btn-accent w-full mb-4">Buy Now</button>
+                    <button onclick="buyNow('VBP + Telephone Answering', 349.99)" class="btn-accent w-full mb-4">Buy Now</button>
                 </div>
             </div>
         </div>

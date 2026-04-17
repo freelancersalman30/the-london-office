@@ -35,7 +35,8 @@
                         <li><i class="fas fa-check"></i> Free scans & uploads</li>
                         <li><i class="fas fa-check"></i> Director Service (+£10)</li>
                     </ul>
-                    <button onclick="addToCart('Registered Office Address', 49.99)" class="btn-primary w-full">Add to Cart</button>
+                    <button onclick="addToCart('Registered Office Address', 49.99)" class="btn-primary w-full mb-2">Add to Cart</button>
+                    <button onclick="buyNow('Registered Office Address', 49.99)" class="btn-accent w-full">Buy Now</button>
                 </div>
                 
                 <!-- Director Service -->
@@ -49,7 +50,8 @@
                         <li><i class="fas fa-check"></i> Mail forwarding</li>
                         <li><i class="fas fa-check"></i> Free scans</li>
                     </ul>
-                    <button onclick="addToCart('Director Service Address', 10)" class="btn-primary w-full">Add to Cart</button>
+                    <button onclick="addToCart('Director Service Address', 10)" class="btn-primary w-full mb-2">Add to Cart</button>
+                    <button onclick="buyNow('Director Service Address', 10)" class="btn-accent w-full">Buy Now</button>
                 </div>
                 
                 <!-- Virtual Business Address -->
@@ -63,7 +65,8 @@
                         <li><i class="fas fa-check"></i> Mail forwarding</li>
                         <li><i class="fas fa-check"></i> Meeting rooms</li>
                     </ul>
-                    <button onclick="addToCart('Virtual Business Address', 169.99)" class="btn-primary w-full">Add to Cart</button>
+                    <button onclick="addToCart('Virtual Business Address', 169.99)" class="btn-primary w-full mb-2">Add to Cart</button>
+                    <button onclick="buyNow('Virtual Business Address', 169.99)" class="btn-accent w-full">Buy Now</button>
                 </div>
                 
                 <!-- Virtual Business Plus -->
@@ -78,7 +81,8 @@
                         <li><i class="fas fa-check"></i> Director Service</li>
                         <li><i class="fas fa-check"></i> Meeting rooms</li>
                     </ul>
-                    <button onclick="addToCart('Virtual Business Plus', 199.99)" class="btn-accent w-full">Add to Cart</button>
+                    <button onclick="addToCart('Virtual Business Plus', 199.99)" class="btn-accent w-full mb-2">Add to Cart</button>
+                    <button onclick="buyNow('Virtual Business Plus', 199.99)" class="btn-primary w-full">Buy Now</button>
                 </div>
                 
                 <!-- Telephone Answering -->
@@ -92,7 +96,8 @@
                         <li><i class="fas fa-check"></i> Unlimited calls</li>
                         <li><i class="fas fa-check"></i> Email messages</li>
                     </ul>
-                    <button onclick="addToCart('Telephone Answering Service', 357)" class="btn-primary w-full">Add to Cart</button>
+                    <button onclick="addToCart('Telephone Answering Service', 357)" class="btn-primary w-full mb-2">Add to Cart</button>
+                    <button onclick="buyNow('Telephone Answering Service', 357)" class="btn-accent w-full">Buy Now</button>
                 </div>
                 
                 <!-- Meeting Rooms -->
@@ -121,7 +126,8 @@
                         <li><i class="fas fa-check"></i> Virtual Business Address</li>
                         <li><i class="fas fa-check"></i> Telephone Answering</li>
                     </ul>
-                    <button onclick="addToCart('VBA + Telephone Answering', 319.99)" class="btn-primary w-full">Add to Cart</button>
+<button onclick="addToCart('VBA + Telephone Answering', 319.99)" class="btn-primary w-full mb-2">Add to Cart</button>
+                    <button onclick="buyNow('VBA + Telephone Answering', 319.99)" class="btn-accent w-full">Buy Now</button>
                 </div>
                 
                 <div class="price-card popular">
@@ -133,7 +139,20 @@
                         <li><i class="fas fa-check"></i> Virtual Business Plus</li>
                         <li><i class="fas fa-check"></i> Telephone Answering</li>
                     </ul>
-                    <button onclick="addToCart('VBP + Telephone Answering', 349.99)" class="btn-accent w-full">Add to Cart</button>
+                    <button onclick="addToCart('VBP + Telephone Answering', 349.99)" class="btn-primary w-full mb-2">Add to Cart</button>
+                    <button onclick="buyNow('VBP + Telephone Answering', 349.99)" class="btn-accent w-full">Buy Now</button>
+                </div>
+                
+                <div class="price-card">
+                    <h3 class="text-xl font-bold mb-2">VBP + Legal Pack</h3>
+                    <div class="text-3xl font-bold text-orange-500 mb-2">£369.99<span class="text-lg">/yr</span></div>
+                    <p class="text-gray-500 text-sm mb-4">£30.83/month</p>
+                    <ul class="feature-list text-left mb-6">
+                        <li><i class="fas fa-check"></i> Virtual Business Plus</li>
+                        <li><i class="fas fa-check"></i> Legal Document Pack</li>
+                    </ul>
+                    <button onclick="addToCart('VBP + Legal Document Pack', 369.99)" class="btn-primary w-full mb-2">Add to Cart</button>
+                    <button onclick="buyNow('VBP + Legal Document Pack', 369.99)" class="btn-accent w-full">Buy Now</button>
                 </div>
                 
                 <div class="price-card">

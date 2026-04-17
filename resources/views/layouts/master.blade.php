@@ -334,6 +334,42 @@
             cart.push({ name: name, price: price });
             updateCartDisplay();
             alert('Item added to cart!');
+            window.location.href = '/cart';
+        }
+        
+        function buyNow(name, price) {
+            cart = [{ name: name, price: price }];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+            
+            const isLoggedIn = {{ Auth::check() ? 'true' : 'false' }};
+            
+            if (!isLoggedIn) {
+                window.location.href = '{{ route("login") }}?redirect=/cart';
+                return;
+            }
+            
+            fetch('{{ route("checkout") }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({ cart: cart })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    localStorage.removeItem('cart');
+                    updateCartDisplay();
+                    window.location.href = '/order/success/' + data.order_id;
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                alert('Something went wrong. Please try again.');
+            });
         }
         
         function showDiscountPopup() {

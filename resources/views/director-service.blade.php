@@ -45,7 +45,7 @@
                         <p class="text-2xl font-bold">£25/yr + VAT</p>
                     </div>
                     
-                    <button class="btn-accent w-full mb-4">Buy Now</button>
+                    <button onclick="buyNow('Director Service Address', 10)" class="btn-accent w-full mb-4">Buy Now</button>
                     <p class="text-sm text-gray-500 text-center">30-day money-back guarantee</p>
                 </div>
             </div>

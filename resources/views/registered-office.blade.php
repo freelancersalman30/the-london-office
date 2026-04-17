@@ -44,7 +44,7 @@
                         </label>
                     </div>
                     
-                    <button class="btn-accent w-full mb-4">Buy Now</button>
+                    <button onclick="buyNow('Registered Office Address', 49.99)" class="btn-accent w-full mb-4">Buy Now</button>
                     <p class="text-sm text-gray-500 text-center">30-day money-back guarantee</p>
                 </div>
             </div>

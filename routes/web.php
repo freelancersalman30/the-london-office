@@ -1,10 +1,50 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+    Route::post('/register', [AuthController::class, 'register']);
+});
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::middleware('auth')->group(function () {
+    Route::post('/checkout', [OrderController::class, 'checkout'])->name('checkout');
+    Route::get('/order/success/{orderId}', [OrderController::class, 'success'])->name('order.success');
+    Route::get('/order/cancel', [OrderController::class, 'cancel'])->name('order.cancel');
+
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/admin/clients', [AdminController::class, 'clients'])->name('admin.clients');
+    Route::get('/admin/clients/{id}/orders', [AdminController::class, 'clientOrders'])->name('admin.client.orders');
+    Route::post('/admin/clients/{id}/toggle', [AdminController::class, 'toggleClientStatus'])->name('admin.client.toggle');
+    Route::get('/admin/orders', [AdminController::class, 'orders'])->name('admin.orders');
+    Route::put('/admin/orders/{id}/update', [AdminController::class, 'updateOrderStatus'])->name('admin.order.update');
+    Route::get('/admin/services', [AdminController::class, 'services'])->name('admin.services');
+    Route::post('/admin/services', [AdminController::class, 'createService'])->name('admin.service.create');
+    Route::put('/admin/services/{id}', [AdminController::class, 'updateService'])->name('admin.service.update');
+    Route::delete('/admin/services/{id}', [AdminController::class, 'deleteService'])->name('admin.service.delete');
+    Route::get('/admin/settings', [AdminController::class, 'settings'])->name('admin.settings');
+
+    Route::get('/client/dashboard', [ClientController::class, 'dashboard'])->name('client.dashboard');
+    Route::get('/client/orders', [ClientController::class, 'orders'])->name('client.orders');
+    Route::get('/client/orders/{id}', [ClientController::class, 'orderDetail'])->name('client.order.detail');
+    Route::get('/client/services', [ClientController::class, 'services'])->name('client.services');
+    Route::get('/client/locations', [ClientController::class, 'locations'])->name('client.locations');
+    Route::get('/client/profile', [ClientController::class, 'profile'])->name('client.profile');
+    Route::post('/client/profile', [ClientController::class, 'updateProfile'])->name('client.profile.update');
+    Route::post('/client/password', [ClientController::class, 'updatePassword'])->name('client.password.update');
+});
 
 Route::get('/registered-office-address', function () {
     return view('registered-office');

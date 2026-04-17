@@ -42,7 +42,7 @@
                         <p class="text-2xl font-bold text-orange-600">From only £35/month</p>
                     </div>
                     
-                    <button class="btn-accent w-full mb-4">Buy Now</button>
+                    <button onclick="buyNow('Telephone Answering Service', 357)" class="btn-accent w-full mb-4">Buy Now</button>
                     <p class="text-sm text-gray-500 text-center">Call 0207 1128362 or book a call back</p>
                 </div>
             </div>

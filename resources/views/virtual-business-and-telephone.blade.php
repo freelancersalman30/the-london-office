@@ -38,7 +38,7 @@
                     <p class="text-gray-500 text-sm mb-2">£26.66 per month</p>
                     <p class="text-gray-500 text-sm mb-6">+ £20 Postal Deposit + VAT</p>
                     
-                    <button class="btn-accent w-full mb-4">Buy Now</button>
+                    <button onclick="buyNow('VBA + Telephone Answering', 319.99)" class="btn-accent w-full mb-4">Buy Now</button>
                 </div>
             </div>
         </div>

@@ -49,7 +49,7 @@
                         <button class="px-4 py-2 border border-gray-300 font-semibold">1 Month</button>
                     </div>
                     
-                    <button class="btn-accent w-full mb-4">Buy Now</button>
+                    <button onclick="buyNow('Virtual Business Address', 169.99)" class="btn-accent w-full mb-4">Buy Now</button>
                     <p class="text-sm text-gray-500 text-center">30-day money-back guarantee</p>
                 </div>
             </div>
